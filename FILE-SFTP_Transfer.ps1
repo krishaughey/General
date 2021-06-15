@@ -8,8 +8,8 @@ $UserName = "incarddwwdprd"
 $KeyFile = "D:\SFTP\Key........."
 $Credential = New-Object System.Management.Automation.PSCredential ($UserName)
 $LocalFile = "D:\SFTP\GroupIDExport.csv"
-$SFTPPath = 'In/'
+$RemotePath = 'In/'
 $SFTPSession = New-SFTPSession -ComputerName $ComputerName -Credential $Credential -KeyFile $KeyFile
 
-Set-SFTPFile -SessionId $SFTPSession.SessionID -RemotePath $SFTPPath -LocalFile $LocalFile -Overwrite
+Set-SFTPFile -SessionId $SFTPSession.SessionID -RemotePath $RemotePath -LocalFile $LocalFile -Overwrite
 Remove-SFTPSession -SessionId $SFTPSession.SessionID
