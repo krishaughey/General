@@ -13,4 +13,4 @@ $RemotePath = '/'
 $SFTPSession = New-SFTPSession -ComputerName $ComputerName -Credential $Credential -KeyFile $KeyFile
 
 Set-SFTPFile -SessionId $SFTPSession.SessionID -RemotePath $RemotePath -LocalFile $LocalFile -Overwrite
-Remove-SFTPSession -SessionId $SFTPSession.SessionID
+Remove-SFTPSession -SessionId $SFTPSession.SessionID | Out-Null
