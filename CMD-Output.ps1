@@ -1,3 +1,4 @@
+#Pass Output of CMD statement to a PowerShell Object
 $data=nbtstat /n | Select-String "<"
 
 $lines=$data | foreach { $_.Line.Trim()}
